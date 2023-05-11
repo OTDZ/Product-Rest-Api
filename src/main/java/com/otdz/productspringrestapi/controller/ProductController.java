@@ -32,5 +32,16 @@ public class ProductController {
         return product;
     }
 
+    @PutMapping("/product/update/{id}")
+    public Product updateProduct(@PathVariable long id, @RequestBody Product product){
+        Product updateProduct = productRepository.findById(id).get();
+
+        updateProduct.setName(product.getName());
+        updateProduct.setDescription(product.getDescription());
+        updateProduct.setPrice(product.getPrice());
+
+        productRepository.save(updateProduct);
+        return updateProduct;
+    }
 
 }
