@@ -3,6 +3,7 @@ package com.otdz.productspringrestapi.controller;
 import com.otdz.productspringrestapi.entity.Product;
 import com.otdz.productspringrestapi.repository.ProductRepository;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -21,5 +22,12 @@ public class ProductController {
     public List<Product> getAllProducts(){
         return productRepository.findAll();
     }
+
+    @GetMapping("/product/{id}")
+    public Product getProductById(@PathVariable long id){
+        return productRepository.findById(id).get();
+    }
+
+
 
 }
