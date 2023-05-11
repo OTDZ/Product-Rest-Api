@@ -44,4 +44,9 @@ public class ProductController {
         return updateProduct;
     }
 
+    @DeleteMapping("/product/delete/{id}")
+    public void deleteProduct(@PathVariable long id){
+        productRepository.deleteById(id);
+    }
+
 }
