@@ -1,4 +1,4 @@
-# Product-rest-api
+# Spring-boot-rest-api
 #### A simple REST API which performs the 4 CRUD operations on a Product entity
 
 # Architecture
